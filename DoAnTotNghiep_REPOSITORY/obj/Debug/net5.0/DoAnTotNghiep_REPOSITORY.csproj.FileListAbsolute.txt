@@ -1,0 +1,15 @@
+D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_REPOSITORY\bin\Debug\net5.0\DoAnTotNghiep_REPOSITORY.deps.json
+D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_REPOSITORY\bin\Debug\net5.0\DoAnTotNghiep_REPOSITORY.dll
+D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_REPOSITORY\bin\Debug\net5.0\ref\DoAnTotNghiep_REPOSITORY.dll
+D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_REPOSITORY\bin\Debug\net5.0\DoAnTotNghiep_REPOSITORY.pdb
+D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_REPOSITORY\bin\Debug\net5.0\DoAnTotNghiep_CORE.dll
+D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_REPOSITORY\bin\Debug\net5.0\DoAnTotNghiep_CORE.pdb
+D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_REPOSITORY\obj\Debug\net5.0\DoAnTotNghiep_REPOSITORY.csproj.AssemblyReference.cache
+D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_REPOSITORY\obj\Debug\net5.0\DoAnTotNghiep_REPOSITORY.GeneratedMSBuildEditorConfig.editorconfig
+D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_REPOSITORY\obj\Debug\net5.0\DoAnTotNghiep_REPOSITORY.AssemblyInfoInputs.cache
+D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_REPOSITORY\obj\Debug\net5.0\DoAnTotNghiep_REPOSITORY.AssemblyInfo.cs
+D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_REPOSITORY\obj\Debug\net5.0\DoAnTotNghiep_REPOSITORY.csproj.CoreCompileInputs.cache
+D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_REPOSITORY\obj\Debug\net5.0\DoAnTotNghiep_REPOSITORY.csproj.CopyComplete
+D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_REPOSITORY\obj\Debug\net5.0\DoAnTotNghiep_REPOSITORY.dll
+D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_REPOSITORY\obj\Debug\net5.0\ref\DoAnTotNghiep_REPOSITORY.dll
+D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_REPOSITORY\obj\Debug\net5.0\DoAnTotNghiep_REPOSITORY.pdb

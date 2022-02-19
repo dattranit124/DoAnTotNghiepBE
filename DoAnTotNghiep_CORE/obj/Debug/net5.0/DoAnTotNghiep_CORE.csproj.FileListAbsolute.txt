@@ -1,0 +1,14 @@
+D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_CORE\bin\Debug\net5.0\DoAnTotNghiep_CORE.deps.json
+D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_CORE\bin\Debug\net5.0\DoAnTotNghiep_CORE.dll
+D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_CORE\bin\Debug\net5.0\ref\DoAnTotNghiep_CORE.dll
+D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_CORE\bin\Debug\net5.0\DoAnTotNghiep_CORE.pdb
+D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_CORE\obj\Debug\net5.0\DoAnTotNghiep_CORE.Helpers.Resource.resources
+D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_CORE\obj\Debug\net5.0\DoAnTotNghiep_CORE.csproj.GenerateResource.cache
+D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_CORE\obj\Debug\net5.0\DoAnTotNghiep_CORE.GeneratedMSBuildEditorConfig.editorconfig
+D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_CORE\obj\Debug\net5.0\DoAnTotNghiep_CORE.AssemblyInfoInputs.cache
+D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_CORE\obj\Debug\net5.0\DoAnTotNghiep_CORE.AssemblyInfo.cs
+D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_CORE\obj\Debug\net5.0\DoAnTotNghiep_CORE.csproj.CoreCompileInputs.cache
+D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_CORE\obj\Debug\net5.0\DoAnTotNghiep_CORE.dll
+D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_CORE\obj\Debug\net5.0\ref\DoAnTotNghiep_CORE.dll
+D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_CORE\obj\Debug\net5.0\DoAnTotNghiep_CORE.pdb
+D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_CORE\obj\Debug\net5.0\DoAnTotNghiep_CORE.csproj.AssemblyReference.cache
