@@ -11,10 +11,12 @@ namespace DoAnTotNghiep_CORE.Interfaces.Repository.Manager
     {
        public object GetByFilter(string searchText, int pageSize, int pageIndex);
         public Customer GetById(string id);
+        public List<Customer> GetCustomer();
 
         public ServiceResult Delete(List<string> id);
         public ServiceResult Update(Customer customer, string id);
         public ServiceResult UpDateCart(Cart cart, string id);
         public ServiceResult UpDateOrder(Order order, string id);
+        public ServiceResult act(Customer customer);
     }
 }

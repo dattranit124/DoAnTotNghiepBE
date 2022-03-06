@@ -64,7 +64,7 @@ namespace DoAnTotNghiep_REPOSITORY.Repository.Manager
         {
             var existsSlug = false;
             var numberSlug = 0;
-            collection.CollectionId = Helper.GenId();
+            
             collection.CollectionSlug = Helper.GenSlug(collection.CollectionName);
             var checkSlug = _mongoConnect.GetCollection<Collection>("Collection").Find(x => x.CollectionSlug.Contains(collection.CollectionSlug)).ToList();
             
@@ -82,20 +82,44 @@ namespace DoAnTotNghiep_REPOSITORY.Repository.Manager
                 }
                 else collection.CollectionSlug = collection.CollectionSlug + "-" + 1;
             }    
+            if(String.IsNullOrEmpty(collection.CollectionId))
+            {
+                collection.CollectionId = Helper.GenId();
+                 var check = _mongoConnect.GetCollection<Collection>("Collection").InsertOneAsync(collection);
+                if (check != null)
+                {
+                    serviceResult.IsSuccess = true;
+                    serviceResult.MSG = Resource.SuccessAdd;
+                    serviceResult.Id = collection.CollectionId;
+                    return serviceResult;
+                }
+                else
+                {
+                    serviceResult.IsSuccess = false;
+                    serviceResult.MSG = Resource.FailAdd;
+                    return serviceResult;
+                }
+            }
+            else
+            {
+                var filter = Builders<Collection>.Filter.Eq(g => g.CollectionId, collection.CollectionId);
+                var check = _mongoConnect.GetCollection<Collection>("Collection").ReplaceOneAsync(filter, collection);
+                if (check != null)
+                {
+                    serviceResult.IsSuccess = true;
+                    serviceResult.MSG = Resource.SuccessUpdate;
+                    serviceResult.Id = collection.CollectionId;
+                    return serviceResult;
+                }
+                else
+                {
+                    serviceResult.IsSuccess = false;
+                    serviceResult.MSG = Resource.FailUpdate;
+                    return serviceResult;
+                }
 
-            var check = _mongoConnect.GetCollection<Collection>("Collection").InsertOneAsync(collection);
-           if(check != null)
-            {
-                serviceResult.IsSuccess = true;
-                serviceResult.MSG = Resource.SuccessAdd;
-                return serviceResult;
             }
-           else
-            {
-                serviceResult.IsSuccess = false;
-                serviceResult.MSG = Resource.FailAdd;
-                return serviceResult;
-            }
+          
         }
 
         public ServiceResult Update(Collection collection, string id)

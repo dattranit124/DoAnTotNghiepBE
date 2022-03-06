@@ -51,7 +51,7 @@ namespace DoAnTotNghiep_API.API
             }
         }
         [HttpPost]
-        public IActionResult Create([FromBody] Collection collection)
+        public IActionResult act([FromBody] Collection collection)
         {
             try
             {

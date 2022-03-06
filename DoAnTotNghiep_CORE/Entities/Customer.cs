@@ -18,9 +18,10 @@ namespace DoAnTotNghiep_CORE.Entities
         public string LastName { get; set; }
         public Account Account { get; set; }
         public string PhoneNumber { get; set; }
-        public List<string> Address { get; set; }
+        public string Address { get; set; }
 
         public Cart Cart{ get; set; }
-        public List<Order> Orders { get; set; }
+        public List<string> Orders { get; set; }
+        public string Role { get; set; }
     } 
 }

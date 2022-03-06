@@ -14,72 +14,51 @@ namespace DoAnTotNghiep_API.API
     [Authorize]
     [Route("api/v1/[controller]")]
     [ApiController]
-    public class NotificationController : ControllerBase
+    public class OrderController : ControllerBase
     {
-        protected INotificationRepository _notificationRepository;
-        public NotificationController(INotificationRepository notificationRepository)
+        protected IOrderRepository _orderRepository;
+        public OrderController(IOrderRepository orderRepository)
         {
-            _notificationRepository = notificationRepository;
+            _orderRepository = orderRepository;
+        }
+        [HttpPost]
+        public IActionResult act(Order order)
+        {
+            try
+            {
+                var res = _orderRepository.act(order);
+                return Ok(res);
+            }
+            catch (Exception ex)
+            {
+
+                return StatusCode(500, Helper.HadleExceptionResult(ex));
+            }
         }
         [HttpGet]
-        public IActionResult GetAll()
+        public IActionResult Get()
         {
             try
             {
-                var result = _notificationRepository.GetAll();
-                return Ok(result);
+                var res = _orderRepository.get();
+                return Ok(res);
             }
             catch (Exception ex)
             {
-                return StatusCode(500, Helper.HadleExceptionResult(ex));
-            }
-        }
-        [HttpGet("{id}")]
-        public IActionResult GetById(string id)
-        {
-            try
-            {
-                var result = _notificationRepository.GetById(id);
-                return Ok(result);
-            }
-            catch (Exception ex)
-            {
-
-                return StatusCode(500, Helper.HadleExceptionResult(ex));
-            }
-        }
-        [AllowAnonymous]
-        [HttpPost]
-        public IActionResult Create([FromBody] Notification notification)
-        {
-            try
-            {
-                var result = _notificationRepository.Insert(notification);
-                if (result.IsSuccess)
-                {
-                    return Ok(result);
-                }
-                else return BadRequest(result);
-            }
-            catch (Exception ex)
-            {
-
                 return StatusCode(500, Helper.HadleExceptionResult(ex));
             }
         }
         [HttpDelete]
-        public IActionResult DeleteByid([FromBody] List<string> id)
+        public IActionResult Delete([FromBody] List<string> id)
         {
             try
             {
-
-                var result = _notificationRepository.DeleteById(id);
-                if (result.IsSuccess)
+                var res = _orderRepository.DeleteById(id);
+                if (res.IsSuccess)
                 {
-                    return Ok(result);
-
+                    return Ok(res);
                 }
-                else return BadRequest(result);
+                else return BadRequest(res);
             }
             catch (Exception ex)
             {
@@ -87,5 +66,20 @@ namespace DoAnTotNghiep_API.API
                 return StatusCode(500, Helper.HadleExceptionResult(ex));
             }
         }
+        [HttpGet("{id}")]
+        public IActionResult get(string id)
+        {
+            try
+            {
+                var res = _orderRepository.getById(id);
+                return Ok(res);
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, Helper.HadleExceptionResult(ex));
+            }
+        }
+
     }
 }

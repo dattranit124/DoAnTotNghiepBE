@@ -2,17 +2,20 @@
 using DoAnTotNghiep_CORE.Helpers;
 using DoAnTotNghiep_CORE.Interfaces.Repository.Manager;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace DoAnTotNghiep_API.API
 {
     [Authorize]
     [Route("api/v1/[controller]")]
+    [EnableCors("AllowOrigin")]
     [ApiController]
     public class ProductController : ControllerBase
     {
@@ -25,6 +28,7 @@ namespace DoAnTotNghiep_API.API
         [HttpGet]
         public IActionResult GetAll(string searchText, string collectionId, int pageSize, int pageIndex)
         {
+
             try
             {
                 var result = _productRepository.GetByFilter(searchText,collectionId,pageSize,pageIndex);
@@ -65,7 +69,7 @@ namespace DoAnTotNghiep_API.API
             }
         }
         [HttpPost]
-        public IActionResult Create([FromBody] Product product)
+        public IActionResult act([FromBody] Product product)
         {
             try
             {

@@ -27,7 +27,7 @@ namespace DoAnTotNghiep_REPOSITORY.Repository.Manager
             var isOk = true;
             foreach (var id in ids)
             {
-                var filter = Builders<Page>.Filter.Eq("Pageid", id);
+                var filter = Builders<Page>.Filter.Eq(e=>e.PageId, id);
                 var check = _mongoConnect.GetCollection<Page>("Page").DeleteOne(filter);
                 if (check == null)
                 {
@@ -59,7 +59,7 @@ namespace DoAnTotNghiep_REPOSITORY.Repository.Manager
             var collection = _mongoConnect.GetCollection<Page>("Page").Find(x => x.PageId == id).FirstOrDefault();
             return collection;
         }
-        
+
         public Page GetBySlug(string slug)
         {
             var collection = _mongoConnect.GetCollection<Page>("Page").Find(x => x.PageSlug == slug).FirstOrDefault();
@@ -70,38 +70,61 @@ namespace DoAnTotNghiep_REPOSITORY.Repository.Manager
         {
             var existsSlug = false;
             int numberSlug = 0;
-            page.PageId = Helper.GenId();
             page.PageSlug = Helper.GenSlug(page.Title);
             page.DateCreated = DateTime.Now;
             var checkSlug = _mongoConnect.GetCollection<Page>("Page").Find(x => x.PageSlug.Contains(page.PageSlug)).ToList();
 
-            if (checkSlug.Count >0)
+            if (checkSlug.Count > 0)
             {
                 existsSlug = true;
             }
             if (existsSlug)
             {
-               var stringSlug = checkSlug[checkSlug.Count - 1].PageSlug.Substring(checkSlug[checkSlug.Count - 1].PageSlug.Length - 1);
+                var stringSlug = checkSlug[checkSlug.Count - 1].PageSlug.Substring(checkSlug[checkSlug.Count - 1].PageSlug.Length - 1);
                 var checkNumber = int.TryParse(stringSlug, out numberSlug);
-                if(checkNumber)
+                if (checkNumber)
                 {
-                    page.PageSlug = page.PageSlug + "-" + (numberSlug+1);
+                    page.PageSlug = page.PageSlug + "-" + (numberSlug + 1);
                 }
                 else page.PageSlug = page.PageSlug + "-" + 1;
             }
-
-            var check = _mongoConnect.GetCollection<Page>("Page").InsertOneAsync(page);
-            if (check != null)
+            if (String.IsNullOrEmpty(page.PageId))
             {
-                serviceResult.IsSuccess = true;
-                serviceResult.MSG = Resource.SuccessAdd;
-                return serviceResult;
+
+                page.PageId = Helper.GenId();
+                var check = _mongoConnect.GetCollection<Page>("Page").InsertOneAsync(page);
+                if (check != null)
+                {
+                    serviceResult.IsSuccess = true;
+                    serviceResult.MSG = Resource.SuccessAdd;
+                    serviceResult.Id = page.PageId;
+                    return serviceResult;
+                }
+                else
+                {
+                    serviceResult.IsSuccess = false;
+                    serviceResult.MSG = Resource.FailAdd;
+                    return serviceResult;
+                }
             }
             else
             {
-                serviceResult.IsSuccess = false;
-                serviceResult.MSG = Resource.FailAdd;
-                return serviceResult;
+                var filter = Builders<Page>.Filter.Eq(g => g.PageId, page.PageId);
+                var check = _mongoConnect.GetCollection<Page>("Page").ReplaceOneAsync(filter, page);
+                if (check != null)
+                {
+                    serviceResult.IsSuccess = true;
+                    serviceResult.MSG = Resource.SuccessUpdate;
+                    serviceResult.Id = page.PageId;
+                    return serviceResult;
+                }
+                else
+                {
+                    serviceResult.IsSuccess = false;
+                    serviceResult.MSG = Resource.FailUpdate;
+                    return serviceResult;
+                }
+
             }
         }
 

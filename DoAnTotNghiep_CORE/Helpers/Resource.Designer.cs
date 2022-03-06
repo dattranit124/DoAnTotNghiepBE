@@ -124,7 +124,7 @@ namespace DoAnTotNghiep_CORE.Helpers {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Chúc mừng bạn đã đăng kí tài khoản thành công ! Click để quay lại.
+        ///   Looks up a localized string similar to Chúc mừng bạn đã đăng kí tài khoản thành công ! .
         /// </summary>
         public static string SuccessRegister {
             get {

@@ -1,6 +1,7 @@
-﻿using DoAnTotNghiep_CORE.Entities;
+﻿    using DoAnTotNghiep_CORE.Entities;
 using DoAnTotNghiep_CORE.Helpers;
 using DoAnTotNghiep_CORE.Interfaces.Repository.Manager;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using MongoDB.Driver;
 using System;
@@ -67,7 +68,7 @@ namespace DoAnTotNghiep_REPOSITORY.Repository.Manager
             {
                 pageIndex = 1;
             }    
-            var project = Builders<Product>.Projection.Include(x => x.ProductName).Include(x=>x.Price).Include(X=>X.Total).Include(x=>x.DateCreated).Include(x=>x.Description).Include(x=>x.Image);
+            var project = Builders<Product>.Projection.Include(x => x.ProductName).Include(x=>x.Price).Include(X=>X.Total).Include(x=>x.DateCreated).Include(x=>x.Description).Include(x=>x.Image).Include(x=>x.Slug);
             var sort = Builders<Product>.Sort.Descending("ProductId");
             var list = _mongoConnect.GetCollection<Product>("Product").Find(filter).Project<Product>(project).Sort(sort).Limit(pageSize).Skip(pageSize * (pageIndex - 1)).ToList();
             var totalPage = 0;
@@ -98,7 +99,6 @@ namespace DoAnTotNghiep_REPOSITORY.Repository.Manager
         {
             var existsSlug = false;
             int numberSlug = 0;
-            product.ProductId = Helper.GenId();
             product.Slug = Helper.GenSlug(product.ProductName);
             product.DateCreated = DateTime.Now;
             var checkSlug = _mongoConnect.GetCollection<Product>("Product").Find(x => x.Slug.Contains(product.Slug)).ToList();
@@ -117,19 +117,42 @@ namespace DoAnTotNghiep_REPOSITORY.Repository.Manager
                 }
                 else product.Slug = product.Slug + "-" + 1;
             }
+            if (String.IsNullOrEmpty(product.ProductId))
+            {
+                product.ProductId = Helper.GenId();
+               var ischeck =  _mongoConnect.GetCollection<Product>("Product").InsertOneAsync(product);
+                if(ischeck !=null)
+                {
+                    serviceResult.IsSuccess = true;
+                    serviceResult.MSG = Resource.SuccessAdd;
+                    serviceResult.Id = product.ProductId;
+                    return serviceResult;
+                }    
+                else
+                {
+                    serviceResult.IsSuccess = false;
+                    serviceResult.MSG = Resource.FailAdd;
+                    return serviceResult;
+                }
+            }
+            else
+            {
+                var filter = Builders<Product>.Filter.Eq(g => g.ProductId, product.ProductId);
+                var check = _mongoConnect.GetCollection<Product>("Product").ReplaceOneAsync(filter, product);
 
-            var check = _mongoConnect.GetCollection<Product>("Product").InsertOneAsync(product);
             if (check != null)
             {
                 serviceResult.IsSuccess = true;
-                serviceResult.MSG = Resource.SuccessAdd;
-                return serviceResult;
+                serviceResult.MSG = Resource.SuccessUpdate;
+                    serviceResult.Id = product.ProductId;
+                    return serviceResult;
             }
             else
             {
                 serviceResult.IsSuccess = false;
-                serviceResult.MSG = Resource.FailAdd;
+                serviceResult.MSG = Resource.FailUpdate;
                 return serviceResult;
+            }
             }
         }
 

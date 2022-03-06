@@ -19,7 +19,7 @@ namespace DoAnTotNghiep_CORE.Entities
         public double Price { get; set; }
         public int Total { get; set; }
         public List<string> Size { get; set; }
-        public List<string> Image { get; set; }
+        public string Image { get; set; }
         public string Slug { get; set;}
         public Collection Collection { get; set; }
         public int Quanlity { get; set; }

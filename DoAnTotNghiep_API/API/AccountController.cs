@@ -1,6 +1,7 @@
 ﻿using DoAnTotNghiep_CORE.Entities;
 using DoAnTotNghiep_CORE.Interfaces.Repository.Manager;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -12,6 +13,7 @@ namespace DoAnTotNghiep_API.API
 {
     [Authorize]
     [Route("api/v1/[controller]")]
+    [EnableCors("AllowOrigin")]
     [ApiController]
     public class AccountController :ControllerBase
     {

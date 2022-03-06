@@ -67,7 +67,7 @@ namespace DoAnTotNghiep_API.API
             }
         }
         [HttpPost]
-        public IActionResult Create([FromBody] Page page)
+        public IActionResult act([FromBody] Page page)
         {
             try
             {
@@ -85,24 +85,6 @@ namespace DoAnTotNghiep_API.API
             }
         }
 
-        [HttpPut("{id}")]
-        public IActionResult Update([FromBody] Page page, string id)
-        {
-            try
-            {
-                var result = _pageRepository.Update(page, id);
-                if (result.IsSuccess)
-                {
-                    return Ok(result);
-                }
-                else return BadRequest(result);
-            }
-            catch (Exception ex)
-            {
-
-                return StatusCode(500, Helper.HadleExceptionResult(ex));
-            }
-        }
         [HttpDelete]
         public IActionResult DeleteByid([FromBody] List<string> id)
         {

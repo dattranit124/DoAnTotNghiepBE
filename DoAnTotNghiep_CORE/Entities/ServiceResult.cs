@@ -10,5 +10,6 @@ namespace DoAnTotNghiep_CORE.Entities
     {
         public bool IsSuccess { get; set; }
         public string MSG { get; set; }
+        public string Id { get; set; }
     }
 }

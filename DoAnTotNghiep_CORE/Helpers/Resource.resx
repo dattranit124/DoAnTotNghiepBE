@@ -139,7 +139,7 @@
     <value>Xóa thành công</value>
   </data>
   <data name="SuccessRegister" xml:space="preserve">
-    <value>Chúc mừng bạn đã đăng kí tài khoản thành công ! Click để quay lại</value>
+    <value>Chúc mừng bạn đã đăng kí tài khoản thành công ! </value>
   </data>
   <data name="SuccessUpdate" xml:space="preserve">
     <value>Sửa thành công</value>

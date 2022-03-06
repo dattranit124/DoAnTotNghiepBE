@@ -34,7 +34,10 @@ namespace DoAnTotNghiep_API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCors();
+            services.AddCors(c =>
+            {
+                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
+            });
             //Xử lý JSON
             services.AddControllers().AddNewtonsoftJson(options =>
             {
@@ -53,9 +56,11 @@ namespace DoAnTotNghiep_API
                 x.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Configuration.GetSection("JwtKey").ToString())),
-                    ValidateIssuer = false,
-                    ValidateAudience = false
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Configuration["Jwt:Key"].ToString())),
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidAudience = Configuration["Jwt:Audience"],
+                    ValidIssuer = Configuration["Jwt:Issuer"]
                 };
             });
             
@@ -71,6 +76,7 @@ namespace DoAnTotNghiep_API
             services.AddScoped<IPageRepository, PageRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<ICustomerRepository, CustomerRepository>();
+            services.AddScoped<IOrderRepository, OrderRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -78,7 +84,7 @@ namespace DoAnTotNghiep_API
         {
             app.UseAuthentication();
             //Xử lý Cors
-            app.UseCors(option => option.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+            app.UseCors(options => options.AllowAnyOrigin());
             //Xử lý Json
             if (env.IsDevelopment())
             {
@@ -92,7 +98,7 @@ namespace DoAnTotNghiep_API
             app.UseRouting();
 
             app.UseAuthorization();
-
+            app.UseCors("AllowSetOrigins");
 
             app.UseEndpoints(endpoints =>
             {
