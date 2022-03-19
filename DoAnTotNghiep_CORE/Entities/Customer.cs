@@ -21,7 +21,7 @@ namespace DoAnTotNghiep_CORE.Entities
         public string Address { get; set; }
 
         public Cart Cart{ get; set; }
-        public List<string> Orders { get; set; }
+        public List<Order> Orders { get; set; }
         public string Role { get; set; }
     } 
 }

@@ -5,7 +5,6 @@ D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_API\bin\Debug\net5.0\DoAnTotNghi
 D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_API\bin\Debug\net5.0\DoAnTotNghiep_API.runtimeconfig.json
 D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_API\bin\Debug\net5.0\DoAnTotNghiep_API.runtimeconfig.dev.json
 D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_API\bin\Debug\net5.0\DoAnTotNghiep_API.dll
-D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_API\bin\Debug\net5.0\ref\DoAnTotNghiep_API.dll
 D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_API\bin\Debug\net5.0\DoAnTotNghiep_API.pdb
 D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_API\bin\Debug\net5.0\DnsClient.dll
 D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_API\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
@@ -50,7 +49,6 @@ D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_API\obj\Debug\net5.0\DoAnTotNghi
 D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_API\obj\Debug\net5.0\DoAnTotNghiep_API.MvcApplicationPartsAssemblyInfo.cs
 D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_API\obj\Debug\net5.0\DoAnTotNghiep_API.MvcApplicationPartsAssemblyInfo.cache
 D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_API\obj\Debug\net5.0\staticwebassets\DoAnTotNghiep_API.StaticWebAssets.Manifest.cache
-D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_API\obj\Debug\net5.0\staticwebassets\DoAnTotNghiep_API.StaticWebAssets.xml
 D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_API\obj\Debug\net5.0\scopedcss\bundle\DoAnTotNghiep_API.styles.css
 D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_API\obj\Debug\net5.0\DoAnTotNghiep_API.RazorTargetAssemblyInfo.cache
 D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_API\obj\Debug\net5.0\DoAnTotNghiep_API.csproj.CopyComplete
@@ -58,3 +56,4 @@ D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_API\obj\Debug\net5.0\DoAnTotNghi
 D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_API\obj\Debug\net5.0\ref\DoAnTotNghiep_API.dll
 D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_API\obj\Debug\net5.0\DoAnTotNghiep_API.pdb
 D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_API\obj\Debug\net5.0\DoAnTotNghiep_API.genruntimeconfig.cache
+D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_API\obj\Debug\net5.0\refint\DoAnTotNghiep_API.dll

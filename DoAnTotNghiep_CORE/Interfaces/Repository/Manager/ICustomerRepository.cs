@@ -9,7 +9,7 @@ namespace DoAnTotNghiep_CORE.Interfaces.Repository.Manager
 {
     public interface ICustomerRepository
     {
-       public object GetByFilter(string searchText, int pageSize, int pageIndex);
+       public List<Customer> GetByFilter(string searchText, int pageSize, int pageIndex, string orderId);
         public Customer GetById(string id);
         public List<Customer> GetCustomer();
 

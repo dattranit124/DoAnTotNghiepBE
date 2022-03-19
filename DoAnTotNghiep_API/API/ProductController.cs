@@ -123,6 +123,13 @@ namespace DoAnTotNghiep_API.API
                 return StatusCode(500, Helper.HadleExceptionResult(ex));
             }
         }
+        [AllowAnonymous]
+        [HttpGet("size")]
+        public IActionResult GetBySize(string size)
+        {
+            var res = _productRepository.getBySize(size);
+            return Ok(res);
+        }
 
     }
 }

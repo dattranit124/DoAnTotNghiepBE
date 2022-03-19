@@ -11,6 +11,6 @@ namespace DoAnTotNghiep_CORE.Entities
         public string CustomerName { get; set; }
         public string EmailCustomer { get; set; }
         public string AddressCustomer { get; set; }
-        public string PhoneCustomer { get; set; }
+        public string PhoneCustomer { get; set; }   
     }
 }

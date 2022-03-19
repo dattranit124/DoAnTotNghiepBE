@@ -15,5 +15,6 @@ namespace DoAnTotNghiep_CORE.Interfaces.Repository.Manager
         public ServiceResult Insert(Product product);
         public ServiceResult Update(Product product, string id);
         public Product GetBySlug(string slug);
+        public List<Product> getBySize(string size);
     }
 }

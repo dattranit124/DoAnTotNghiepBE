@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "B+dGQ+4ozIUzH0gl0C0z1k9iKczLWaKSA0VTPQVCRqGxetdtKspjUUWqbb+fiaGVhFM8NFoCkxa3ayirafdawg==",
+  "dgSpecHash": "m273s0VLclsstX1f4JEQtM/c23kFtSU3SjPvkiTs/xlLKbqhUqCG7DLrtMVcWJrogNg9IX+E/TCbVnnYhqSKlA==",
   "success": true,
   "projectFilePath": "D:\\DoAnTotNghiep\\DoAnTotNghiep-BE\\DoAnTotNghiep_API\\DoAnTotNghiep_API.csproj",
   "expectedPackageFiles": [
@@ -64,7 +64,8 @@
     "C:\\Users\\Tranh\\.nuget\\packages\\system.security.cryptography.xml\\4.5.0\\system.security.cryptography.xml.4.5.0.nupkg.sha512",
     "C:\\Users\\Tranh\\.nuget\\packages\\system.security.permissions\\4.5.0\\system.security.permissions.4.5.0.nupkg.sha512",
     "C:\\Users\\Tranh\\.nuget\\packages\\system.security.principal.windows\\4.5.0\\system.security.principal.windows.4.5.0.nupkg.sha512",
-    "C:\\Users\\Tranh\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512"
+    "C:\\Users\\Tranh\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512",
+    "C:\\Users\\Tranh\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.14\\microsoft.netcore.app.host.win-x64.5.0.14.nupkg.sha512"
   ],
   "logs": []
 }

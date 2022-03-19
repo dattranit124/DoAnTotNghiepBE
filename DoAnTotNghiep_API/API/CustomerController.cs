@@ -163,5 +163,12 @@ namespace DoAnTotNghiep_API.API
                 return StatusCode(500, Helper.HadleExceptionResult(ex));
             }
         }
+        [AllowAnonymous]
+        [HttpGet("orderId")]
+        public IActionResult get(string searchText, int pageSize, int pageIndex, string orderId)
+        {
+            var res = _customerRepository.GetByFilter(searchText, pageSize, pageIndex, orderId);
+            return Ok(res);
+        }
     }
 }

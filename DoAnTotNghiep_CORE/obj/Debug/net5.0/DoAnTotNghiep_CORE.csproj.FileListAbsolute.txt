@@ -1,6 +1,5 @@
 D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_CORE\bin\Debug\net5.0\DoAnTotNghiep_CORE.deps.json
 D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_CORE\bin\Debug\net5.0\DoAnTotNghiep_CORE.dll
-D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_CORE\bin\Debug\net5.0\ref\DoAnTotNghiep_CORE.dll
 D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_CORE\bin\Debug\net5.0\DoAnTotNghiep_CORE.pdb
 D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_CORE\obj\Debug\net5.0\DoAnTotNghiep_CORE.Helpers.Resource.resources
 D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_CORE\obj\Debug\net5.0\DoAnTotNghiep_CORE.csproj.GenerateResource.cache
@@ -12,3 +11,4 @@ D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_CORE\obj\Debug\net5.0\DoAnTotNgh
 D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_CORE\obj\Debug\net5.0\ref\DoAnTotNghiep_CORE.dll
 D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_CORE\obj\Debug\net5.0\DoAnTotNghiep_CORE.pdb
 D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_CORE\obj\Debug\net5.0\DoAnTotNghiep_CORE.csproj.AssemblyReference.cache
+D:\DoAnTotNghiep\DoAnTotNghiep-BE\DoAnTotNghiep_CORE\obj\Debug\net5.0\refint\DoAnTotNghiep_CORE.dll

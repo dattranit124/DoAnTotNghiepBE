@@ -56,9 +56,10 @@ namespace DoAnTotNghiep_REPOSITORY.Repository.Manager
             }
         }
 
-        public object GetByFilter(string searchText, int pageSize, int pageIndex)
+        public List<Customer> GetByFilter(string searchText, int pageSize, int pageIndex, string orderId)
         {
-            throw new NotImplementedException();
+            var res = _mongoConnect.GetCollection<Customer>("Customer").AsQueryable().ToList();
+            return res;
         }
 
         public Customer GetById(string id)
@@ -130,11 +131,11 @@ namespace DoAnTotNghiep_REPOSITORY.Repository.Manager
             }
             order.TotalPrice = total;
             var filter = Builders<Customer>.Filter.Eq(x => x.CustomerId, id);
-             var update = Builders<Customer>.Update.Push<String>(e => e.Orders, order.OrderId).Set(x=>x.Cart, null);
-             customers.FindOneAndUpdateAsync(filter, update);
+            var update = Builders<Customer>.Update.Push<Order>(e => e.Orders, order).Set(x => x.Cart, null);
+            customers.FindOneAndUpdateAsync(filter, update);
             _mongoConnect.GetCollection<Order>("Order").InsertOneAsync(order);
-                serviceResult.IsSuccess = true;
-                serviceResult.MSG = Resource.SuccessAdd + " Mã đơn hàng : " + order.OderCustomerCheck;
+            serviceResult.IsSuccess = true;
+            serviceResult.MSG = Resource.SuccessAdd + " Mã đơn hàng : " + order.OderCustomerCheck;
             return serviceResult;
            
         }

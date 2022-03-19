@@ -89,6 +89,17 @@ namespace DoAnTotNghiep_REPOSITORY.Repository.Manager
             return product;
         }
 
+        public List<Product> getBySize(string size)
+        {
+            var filter = Builders<Product>.Filter.And(
+         Builders<Product>.Filter.ElemMatch(x => x.Size, Builders<string>.Filter
+         .And(
+            Builders<string>.Filter.Eq(y=>y, size)
+         ))); ;
+            var res = _mongoConnect.GetCollection<Product>("Product").Find(filter).Limit(10).Skip(1).ToList();
+            return res;
+        }
+
         public Product GetBySlug(string slug)
         {
             var product = _mongoConnect.GetCollection<Product>("Product").Find(x => x.Slug == slug).FirstOrDefault();

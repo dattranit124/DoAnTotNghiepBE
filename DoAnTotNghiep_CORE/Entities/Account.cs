@@ -16,8 +16,8 @@ namespace DoAnTotNghiep_CORE.Entities
         /// <summary>
         /// Id bài tập
         /// </summary>
-        public string AccountId { get; set; }
-        public string Username{ get; set; }
-        public string Password { get; set; }
+        public string AccountId { get; set;}
+        public string Username{ get; set;}
+        public string Password { get; set;}
     }
 }
